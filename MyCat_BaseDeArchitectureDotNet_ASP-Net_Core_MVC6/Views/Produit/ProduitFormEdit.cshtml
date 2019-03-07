@@ -1,0 +1,30 @@
+﻿@model MyCat_BaseDeArchitectureDotNet_ASP_Net_Core_MVC6.Service.Produit 
+@{
+    ViewBag.title = "Edit d'un Produit";
+}
+
+
+<div class="container spacer">
+
+    <form asp-coontroller="Produit" asp-action="Update" method="post">
+        <div class="form-group">
+            @Html.LabelFor(p => p.ProduitID, new { @class = "control-label" })
+            @Html.TextBoxFor(p => p.ProduitID, new { @class = "form-control" }) 
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.Designation, new { @class = "control-label" })
+            @Html.TextBoxFor(p => p.Designation, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.Designation, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.Prix, new { @class = "control-label" })
+            @Html.TextBoxFor(p => p.Prix, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.Prix, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+
+</div>
+
